@@ -1,0 +1,6 @@
+[submodule "nginx"]
+	path = nginx
+	url = https://github.com/Zombie123456/nginx.git
+[submodule "docker-api"]
+	path = docker-api
+	url = https://github.com/Zombie123456/docker-api.git
