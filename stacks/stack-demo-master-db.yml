@@ -15,7 +15,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.environment == chalice
+          - node.role == manager
   redis:
     image: redis:5.0.4
     networks:
@@ -24,7 +24,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.environment == chalice
+          - node.role == manager
     volumes:
       - redis-data:/data
 

@@ -12,7 +12,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.labels.environment == chalice
+          - node.role == manager
 
 networks:
   demo_data:

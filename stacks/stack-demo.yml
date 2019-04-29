@@ -19,7 +19,7 @@ services:
         condition: on-failure
       placement:
         constraints:
-          - node.labels.environment == chalice
+          - node.role == manager
   demo-celery:
     image: chalice/learn_server:latest
     entrypoint: /docker_api/celery-entrypoint.sh
@@ -39,7 +39,7 @@ services:
         condition: on-failure
       placement:
         constraints:
-          - node.labels.environment == chalice
+          - node.role == manager
 
 
 networks:

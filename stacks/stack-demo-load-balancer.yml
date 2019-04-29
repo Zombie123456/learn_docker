@@ -21,7 +21,7 @@ services:
         condition: on-failure
       placement:
         constraints:
-          - node.labels.environment == chalice
+          - node.role == manager
     ports:
       - target: 8000
         published: 8000
