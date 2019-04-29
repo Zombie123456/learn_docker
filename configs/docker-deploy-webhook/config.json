@@ -1,10 +1,10 @@
 {
   "services": {
-    "unnotechpayment/panther:latest": {
-      "service": "staging_panther,staging_panther-celery"
+    "chalice/learn_server:latest": {
+      "service": "chalice_ser_demo,chalice_ser_demo-celery"
     },
-    "unnotechpayment/panther:production": {
-      "service": "production_panther,production_panther-celery"
+    "chalice/learn_server:production": {
+      "service": "chalice_ser_demo,chalice_ser_demo-celery"
     }
   }
 }
