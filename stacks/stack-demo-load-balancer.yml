@@ -9,6 +9,7 @@ services:
       - cache:/etc/nginx/cache
     env_file:
       - ../env/.env
+      - ../env/.nginx
     configs:
       - source: nginx_default_conf
         target: /etc/nginx/conf.d/default.conf
