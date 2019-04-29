@@ -1,0 +1,10 @@
+{
+  "services": {
+    "unnotechpayment/panther:latest": {
+      "service": "staging_panther,staging_panther-celery"
+    },
+    "unnotechpayment/panther:production": {
+      "service": "production_panther,production_panther-celery"
+    }
+  }
+}

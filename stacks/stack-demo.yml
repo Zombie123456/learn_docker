@@ -1,0 +1,47 @@
+version: '3.4'
+services:
+  demo:
+    image: chalice/learn_server:latest
+    env_file:
+      - ../env/.env
+      - ../env/.rabbitmq
+    networks:
+      - demo_data
+      - reverse_proxy
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        failure_action: rollback
+        delay: 3s
+        order: start-first
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.environment == chalice
+  demo-celery:
+    image: chalice/learn_server:latest
+    entrypoint: /docker_api/celery-entrypoint.sh
+    env_file:
+      - ../env/.env
+      - ../env/.rabbitmq
+    networks:
+      - demo_data
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        failure_action: rollback
+        delay: 3s
+        order: start-first
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.environment == chalice
+
+
+networks:
+  panther_data:
+  reverse_proxy:

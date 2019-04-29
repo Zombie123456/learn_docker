@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+  rabbitmq:
+    restart: always
+    image: rabbitmq:3.7.8-management
+    ports:
+      - 15673:15672
+    env_file:
+      - ../env/.rabbitmq
+    networks:
+      - demo_data
+    deploy:
+      placement:
+        constraints:
+          - node.labels.environment == chalice
+
+networks:
+  demo_data:
