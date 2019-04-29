@@ -43,5 +43,5 @@ services:
 
 
 networks:
-  panther_data:
+  demo_data:
   reverse_proxy:
