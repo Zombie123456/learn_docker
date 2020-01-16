@@ -5,9 +5,9 @@ services:
     env_file:
       - ../env/.env
       - ../env/.rabbitmq
-    secrets:
-      - source: CONFIG
-      - target: /docker_api/settings/aliyunkey.json
+    # secrets:
+    #   - source: CONFIG
+    #   - target: /docker_api/aliyunkey.json
     networks:
       - demo_data
       - reverse_proxy
