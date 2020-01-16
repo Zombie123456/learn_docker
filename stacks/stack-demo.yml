@@ -48,3 +48,7 @@ services:
 networks:
   demo_data:
   reverse_proxy:
+
+secrets:
+  CONFIG:
+    external: true
