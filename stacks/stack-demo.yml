@@ -6,7 +6,7 @@ services:
       - ../env/.env
       - ../env/.rabbitmq
     secrets:
-      - CONFIG
+      - bbf5p9kkq6c2ljka7k06s83mk
     networks:
       - demo_data
       - reverse_proxy
