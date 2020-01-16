@@ -7,7 +7,7 @@ services:
       - ../env/.rabbitmq
     secrets:
       - source: aliyun
-      - target: /docker_api/aliyunkey.json
+        target: /docker_api/aliyunkey.json
     networks:
       - demo_data
       - reverse_proxy
