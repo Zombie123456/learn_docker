@@ -26,6 +26,9 @@ services:
   demo-celery:
     image: chalice/learn_server:latest
     entrypoint: /docker_api/celery-entrypoint.sh
+    secrets:
+      - source: aliyun
+        target: /docker_api/aliyunkey.json
     env_file:
       - ../env/.env
       - ../env/.rabbitmq
