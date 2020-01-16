@@ -27,6 +27,9 @@ services:
       - target: 8000
         published: 8000
         mode: host
+      - target: 80
+        published: 80
+        mode: host
 
 networks:
   reverse_proxy:
