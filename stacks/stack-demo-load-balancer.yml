@@ -17,14 +17,14 @@ services:
         target: /etc/nginx/api.chalice.top.key
       - source: nginx_key_api_pem
         target: /etc/nginx/api.chalice.top.pem
-      - source: nginx_key_pem
-        target: /etc/nginx/chalice.top.pem
-      - source: nginx_key_key
-        target: /etc/nginx/chalice.top.key
-      - source: nginx_key_www_key
-        target: /etc/nginx/www.chalice.top.key
-      - source: nginx_key_www_pem
-        target: /etc/nginx/www.chalice.top.pem
+      # - source: nginx_key_pem
+      #   target: /etc/nginx/chalice.top.pem
+      # - source: nginx_key_key
+      #   target: /etc/nginx/chalice.top.key
+      # - source: nginx_key_www_key
+      #   target: /etc/nginx/www.chalice.top.key
+      # - source: nginx_key_www_pem
+      #   target: /etc/nginx/www.chalice.top.pem
 
     deploy:
       replicas: 1
@@ -57,14 +57,6 @@ configs:
     file: /nginx_key/api.chalice.top.key
   nginx_key_api_pem:
     file: /nginx_key/api.chalice.top.pem
-  nginx_key_pem:
-    file: /nginx_key/chalice.top.pem
-  nginx_key_key:
-    file: /nginx_key/chalice.top.key
-  nginx_key_www_pem:
-    file: /nginx_key/www.chalice.top.pem
-  nginx_key_www_key:
-    file: /nginx_key/www.chalice.top.key
 
 volumes:
   logs:
